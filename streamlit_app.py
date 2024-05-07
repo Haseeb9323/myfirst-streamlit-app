@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.title("Welcom:wave:")
+st.title("Welcome:wave:")
