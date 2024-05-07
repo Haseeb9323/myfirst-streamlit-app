@@ -1,9 +1,11 @@
 import streamlit as st
+import pandas as pd
+import pandas_profiling
+from streamlit_pandas_profiling import st_profile_report
 
-st.header('st.selectbox')
+st.header('`streamlit_pandas_profiling`')
 
-option = st.selectbox(
-     'What is your favorite color?',
-     ('Blue', 'Red', 'Green'))
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
 
-st.write('Your favorite color is ', option)
+pr = df.profile_report()
+st_profile_report(pr)
